@@ -1,0 +1,67 @@
+<h2 class="contentTitle">添加菜单</h2>
+<div class="pageContent">
+
+    <form method="post" action="{:url('system/savemenu')}" class="pageForm required-validate" onsubmit="return validateCallback(this)">
+        <input type="hidden" name="action" value="{$id ? 'update' : 'add'}" />
+        <div class="pageFormContent nowrap" layoutH="97">
+
+            <dl>
+                <dt>菜单名称：</dt>
+                <dd>
+                    <input type="text" name="name" maxlength="30" class="required" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>菜单规则：</dt>
+                <dd>
+                    <input type="text" name="rule" size="30"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>上级菜单：</dt>
+                <dd>
+                    <select name="pid">
+                        <option value="0">请选择</option>
+                        {foreach name='menu_list' item='val'}
+                            <option value="{$val.id}">{$val.name}</option>
+                        {/foreach}
+                    </select>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>菜单状态：</dt>
+                <dd>
+                    <select class="required" name="status">
+                        <option value="all">请选择</option>
+                        {foreach name='status' item='val'}
+                            <option value="{$key}" {$key?="selected"}>{$val}</option>
+                        {/foreach}
+                    </select>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>菜单排序：</dt>
+                <dd>
+                    <input type="text" name="sort" maxlength="30" class="required" alt="排序号"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>备注：</dt>
+                <dd><textarea name="remark" cols="80" rows="2" class="textInput"></textarea></dd>
+            </dl>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+
+</div>
+
