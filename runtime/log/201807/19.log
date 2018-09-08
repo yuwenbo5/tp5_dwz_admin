@@ -1,0 +1,147 @@
+---------------------------------------------------------------
+[ 2018-07-19T14:41:27+08:00 ] 127.0.0.1 GET /tenflyer/public/
+[ info ] 127.0.0.1:8088/tenflyer/public/ [运行时间：0.076004s][吞吐率：13.16req/s] [内存消耗：1,682.75kb] [文件加载：48]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8088',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=b33g894gsg2hfkv2aaq1u43s64; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; LAST_OPERATION_TIME=1531982151',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-19T14:41:27+08:00 ] 127.0.0.1 GET /tenflyer/public/index/login/login.html
+[ info ] 127.0.0.1:8088/tenflyer/public/index/login/login.html [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,675.80kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8088',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=b33g894gsg2hfkv2aaq1u43s64; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; LAST_OPERATION_TIME=1531982151',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\index\controller\Login.php ]
+[ info ] [ VIEW ] E:\xampp\htdocs\tenflyer\public/../application/index\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-19T14:42:21+08:00 ] 127.0.0.1 POST /tenflyer/public/index/login/login.html
+[ info ] 127.0.0.1:8088/tenflyer/public/index/login/login.html [运行时间：0.098005s][吞吐率：10.20req/s] [内存消耗：2,377.87kb] [文件加载：52]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8088',
+  'connection' => 'keep-alive',
+  'content-length' => '50',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1:8088',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:8088/tenflyer/public/index/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=b33g894gsg2hfkv2aaq1u43s64; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; LAST_OPERATION_TIME=1531982151',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'checkLogin',
+  'username' => 'yuwenbo',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user` [ RunTime:0.010000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_user` WHERE  `username` = 'yuwenbo'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-07-19T14:42:21+08:00 ] 127.0.0.1 GET /tenflyer/public/index/index/index.html
+[ info ] 127.0.0.1:8088/tenflyer/public/index/index/index.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：1,679.44kb] [文件加载：48]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8088',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3486.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8088/tenflyer/public/index/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=b33g894gsg2hfkv2aaq1u43s64; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; LAST_OPERATION_TIME=1531982151',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\xampp\htdocs\tenflyer\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\xampp\htdocs\tenflyer\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File

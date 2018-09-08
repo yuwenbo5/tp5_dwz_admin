@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://E:/phpstudy/WWW/api_hub/.idea/api_hub.iml" filepath="E:/phpstudy/WWW/api_hub/.idea/api_hub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dwz_group/.idea/dwz_group.iml" filepath="$PROJECT_DIR$/../dwz_group/.idea/dwz_group.iml" />
+      <module fileurl="file://E:/phpstudy/WWW/emmis/.idea/emmis.iml" filepath="E:/phpstudy/WWW/emmis/.idea/emmis.iml" />
+      <module fileurl="file://E:/wamp/www/erp/.idea/erp.iml" filepath="E:/wamp/www/erp/.idea/erp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tenflyer.iml" filepath="$PROJECT_DIR$/.idea/tenflyer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../thsp/.idea/thsp.iml" filepath="$PROJECT_DIR$/../thsp/.idea/thsp.iml" />
+    </modules>
+  </component>
+</project>
