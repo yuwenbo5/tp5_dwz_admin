@@ -11,7 +11,7 @@ class Index extends Base
     public function index()
     {
         $menu = new Menu();
-        $main_menu = $menu->getMainMenu();
+        $main_menu = $menu->getUserMainMenu();
         $current_main_menu = Db::name('menu')->where('name="个人中心" and pid=0')->order('sort','asc')->find();
         $data = array(
             'main_menu' => $main_menu,
@@ -28,7 +28,7 @@ class Index extends Base
         $id = input('id') ? input('id') : $id;
         //查到所有子菜单
         $menu = new Menu();
-        $menu_list = $menu->getValidMenu();
+        $menu_list = $menu->getUserValidMenu();
         $tree_data = $menu->getTreeData($menu_list,$id);
         $menu_html = $menu->getMenuFormat($tree_data,$id);
         $menu_html = '<div class="accordion" fillSpace="sidebar">'.$menu_html.'</div>';

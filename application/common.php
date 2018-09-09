@@ -23,6 +23,16 @@ function json_encode_array($array){
     }
 }
 
+function simplode($array)
+{
+    $return_str = '';
+    foreach($array as $val){
+        $return_str .= '"'.$val.'",';
+    }
+
+    return trim($return_str,',');
+}
+
 
 //自动跳转
 function url_jump($flag,$title,$content,$url,$time=5){

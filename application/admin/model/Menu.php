@@ -8,6 +8,7 @@
 
 namespace app\admin\model;
 use think\Model;
+use think\Session;
 
 class Menu extends Model
 {
@@ -39,6 +40,40 @@ class Menu extends Model
         });
 
         return $main_menu;
+    }
+
+    /**
+     * 获取当前用户所有顶级菜单
+     */
+    public function getUserMainMenu()
+    {
+        if(Session::get('username') == 'admin'){
+            return $this->getMainMenu();
+        }else{
+            $user_menu_list = Session::get('menu_list');
+            $main_menu = self::all(function($query)use($user_menu_list){
+                $query->where('status=1 and pid=0 and name<>"个人中心" and id in ('.simplode($user_menu_list).')')->order('sort','asc');
+            });
+
+            return $main_menu;
+        }
+
+    }
+
+    /**
+     * 获取当前用户所有可用菜单
+     */
+    public function getUserValidMenu()
+    {
+        if(Session::get('username') == 'admin'){
+            return $this->getValidMenu();
+        }else{
+            $user_menu_list = Session::get('menu_list');
+            $menu_list = self::all(function($query)use($user_menu_list){
+                $query->where("status=1 and id in (".simplode($user_menu_list).")")->order('sort','asc');
+            });
+            return $menu_list;
+        }
     }
 
     /**
@@ -94,7 +129,54 @@ class Menu extends Model
     }
 
     /**
-     * 生成html菜单
+     * 根据菜单id获取上级菜单个数(包含上上级)
+     */
+    protected function getParentMenuNums($menu_id)
+    {
+        $nums = 0;
+        $menu = $this->where('id',$menu_id)->find();
+        if($menu['pid'] == 0){
+            $nums ++;
+        }else{
+            $nums ++;
+            $nums += $this->getParentMenuNums($menu['pid']);
+        }
+
+        return $nums;
+    }
+
+    /**
+     * 生成option选项
+     */
+    public function getMenuTreeOpt($treeData,$pid=0)
+    {
+        $optTree = '';
+        foreach($treeData as $value){
+            if($value['pid'] != $pid){
+                continue;
+            }
+            $par_nums = $this->getParentMenuNums($value['id']);
+            $background = $par_nums == 1 ? '#AFCDD0' : '#E4EEEF';
+            $weight = 900 - $par_nums * 150;
+            $rgb = 45 * $par_nums;
+            $color = 'rgb('.$rgb.','.$rgb.','.$rgb.','.')';
+            $prix_str = '';
+            for($i=0; $i<$par_nums; $i++){
+                $prix_str .= '+';
+            }
+            if(isset($value['children']) && !empty($value['children'])){
+                $optTree .= '<option style="font-weight:'.$weight.';font-size:12px;background:'.$background.';color:'.$color.';" value="'.$value['id'].'">|'.$prix_str.$value['name'].'</option>';
+                $optTree .= $this->getMenuTreeOpt($value['children'],$value['id']);
+            }else{
+                $optTree .= '<option style="font-weight:'.$weight.';font-size:12px;background:'.$background.';color:'.$color.';" value="'.$value['id'].'">|'.$prix_str.$value['name'].'</option>';
+            }
+        }
+
+        return $optTree;
+    }
+
+    /**
+     * 生成html菜单节点
      */
     public function getMenuFormat($treeData,$pid=0)
     {
@@ -114,5 +196,34 @@ class Menu extends Model
         $menuTree .= '</div>';
 
         return $menuTree;
+    }
+
+    /**
+     * 生成table_tree
+     */
+    public function getMenuTableTree($treeData,$pid=0)
+    {
+        $tableTree = '';
+        foreach($treeData as $value){
+            if($value['pid'] != $pid){
+                continue;
+            }
+            $hr = '';
+            if($value['pid'] == 0){
+                $hr = '<hr/>';
+            }
+            $par_nums = $this->getParentMenuNums($value['id']);
+            $margin_left = ($par_nums-1) * 30;
+            if(isset($value['children']) && !empty($value['children'])){
+                $tableTree .= $hr.'<ul><h5 style="margin-left:'.$margin_left.'px;"><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</h5>';
+                $tableTree .= $this->getMenuTableTree($value['children'],$value['id']);
+            }else{
+                $tableTree .= '<li style="list-style:none;margin-left:'.$margin_left.'px;"><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</li>';
+            }
+        }
+
+        $tableTree .= '</ul>';
+
+        return $tableTree;
     }
 }

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"E:\phpStudy\WWW\tenflyer\public/../application/admin\view\index\myhome.html";i:1536379567;}*/ ?>
 <div class="navTab-panel tabsPageContent layoutBox">
     <div class="page unitBox">
         <div class="accountInfo">
@@ -8,7 +9,7 @@
                 <p style="color:red"><?=date('Y-m-d H:i')?></p>
             </div>
             <p><span>供应商系统</span></p>
-            <p>Welcome {$Request.session.username}({$Request.session.nickname})</a></p>
+            <p>Welcome 用户</a></p>
         </div>
         <div class="pageFormContent" layoutH="80">
             <fieldset class="nowrap">
