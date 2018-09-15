@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"E:\xampp\htdocs\tenflyer\public/../application/admin\view\index\index.html";i:1536042671;s:64:"E:\xampp\htdocs\tenflyer\application\admin\view\public\menu.html";i:1535959777;s:65:"E:\xampp\htdocs\tenflyer\application\admin\view\index\myhome.html";i:1536042701;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"E:\xampp\htdocs\tenflyer\public/../application/admin\view\index\index.html";i:1536499614;s:64:"E:\xampp\htdocs\tenflyer\application\admin\view\public\menu.html";i:1535959777;s:65:"E:\xampp\htdocs\tenflyer\application\admin\view\index\myhome.html";i:1536499614;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,8 +29,6 @@
     <script src="/tenflyer/public/static/dwz/uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
 
     <script type="text/javascript" src="/tenflyer/public/static/dwz/chart/echarts.min.js"></script>
-
-    <script type="text/javascript" src="/tenflyer/public/static/admin/js/admin.js"></script>
 
     <!-- 可以用dwz.min.js替换前面全部dwz.*.js (注意：替换时下面dwz.regional.zh.js还需要引入)-->
     <script src="/tenflyer/public/static/dwz/js/dwz.min.js" type="text/javascript"></script>
@@ -73,6 +71,7 @@
             });
         });
     </script>
+    <script type="text/javascript" src="/tenflyer/public/static/admin/js/admin.js"></script>
 </head>
 
 <body scroll="no">
@@ -311,7 +310,7 @@
                 <p style="color:red"><?=date('Y-m-d H:i')?></p>
             </div>
             <p><span>供应商系统</span></p>
-            <p>Welcome 用户</a></p>
+            <p>Welcome <?php echo \think\Request::instance()->session('username'); ?>(<?php echo \think\Request::instance()->session('nickname'); ?>)</a></p>
         </div>
         <div class="pageFormContent" layoutH="80">
             <fieldset class="nowrap">

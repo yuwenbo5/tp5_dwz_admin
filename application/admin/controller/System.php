@@ -7,6 +7,7 @@
  */
 
 namespace app\admin\controller;
+use app\admin\model\Auth;
 use app\admin\model\Menu;
 use app\admin\model\UserGroup;
 use think\console\command\make\Model;
@@ -98,8 +99,10 @@ class System extends Base
     //用户分组添加页面
     public function addUserGroup()
     {
+
         $user_group = new UserGroup();
         $menu = new Menu();
+        $auth = new Auth();
 
         //菜单列表
         $main_menu = $menu->getMainMenu();
@@ -112,10 +115,12 @@ class System extends Base
         }
 
         //权限列表
+        $auth_menu_tree = $auth->getAuthTree($auth->getMenuTreeData());
 
         $data = array(
             'status' => $user_group->STATUS_ARR,
             'menu_table_tree' => $menu_table_tree,
+            'auth_menu_tree' => $auth_menu_tree,
         );
         return $this->fetch('add_user_group',$data);
     }
@@ -130,12 +135,14 @@ class System extends Base
         );
         if($request->post('action') == 'add'){
             $input = $request->post();
+            $menu_ids = implode(',',$input['menu_ids']);
+            $auth_ids = implode(',',$input['auth_ids']);
             $data = array(
                 'name' => $input['name'],
                 'desc' => $input['desc'],
                 'status' => $input['status'],
-                'menu_ids' => '',
-                'auth_ids' => '',
+                'menu_ids' => $menu_ids,
+                'auth_ids' => $auth_ids,
                 'operate_id' => Session::get('username'),
                 'operate_time' => date('Y-m-d H:i:s'),
             );
@@ -154,6 +161,52 @@ class System extends Base
             }
             return json($result);
         }
+    }
+
+    //用户列表
+    public function user()
+    {
+        $user_list = Db::name('user')->select();
+        $data = array(
+            'user_list' => $user_list,
+        );
+
+        return $this->fetch('user_list',$data);
+    }
+
+    //添加用户
+    public function addUser()
+    {
+        $user_group = new UserGroup();
+        $menu = new Menu();
+        $auth = new Auth();
+
+        //菜单列表
+        $main_menu = $menu->getMainMenu();
+        $menu_list = $menu->getValidMenu();
+        $menu_table_tree = array();
+        foreach($main_menu as $main){
+            $son_menu_tree = $menu->getTreeData($menu_list,$main['id']);
+            $menu_table_tree[$main['id']] = $main;
+            $menu_table_tree[$main['id']]['son_menu'] = $menu->getMenuTableTree($son_menu_tree,$main['id']);
+        }
+
+        //权限列表
+        $auth_menu_tree = $auth->getAuthTree($auth->getMenuTreeData());
+
+        $data = array(
+            'status' => $user_group->STATUS_ARR,
+            'group_list' => $user_group->getAllValidGroup(),
+            'menu_table_tree' => $menu_table_tree,
+            'auth_menu_tree' => $auth_menu_tree,
+        );
+        return $this->fetch('add_user',$data);
+    }
+
+    //保存用户
+    public function saveUser()
+    {
+
     }
 
     //用户权限列表

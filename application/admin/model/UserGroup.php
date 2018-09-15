@@ -27,4 +27,16 @@ class UserGroup extends Model
             $this->STATUS_NO => '禁用',
         );
     }
+
+    /**
+     * 获取所有可用分组
+     */
+    public function getAllValidGroup()
+    {
+        $group_list = self::all(function($query){
+            $query->where('status=1')->order('id','asc');
+        });
+
+        return $group_list;
+    }
 }

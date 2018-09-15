@@ -1,11 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\tenflyer\public/../application/admin\view\system\auth_list.html";i:1536406968;}*/ ?>
 <form onsubmit="return navTabSearch(this);" id="pageList" action="" method="post" onreset="$(this).find('select.combox').comboxReset()">
     <div class="pageHeader">
         <div class="searchBar">
             <table class="searchContent">
                 <tr>
                     <td>
-                        权限名称：<input type="text" name="name" />
+                        用户名称：<input type="text" name="name" />
                     </td>
                     <td>
                         <select class="combox" name="province" ref="demo_combox_city" refUrl="demo/combox/city_{value}.html" reset-value="bj">
@@ -49,8 +48,8 @@
     <div class="pageContent">
         <div class="panelBar">
             <ul class="toolBar">
-                <li><a class="add" href="<?php echo url('system/addAuth'); ?>" target="navTab"><span>添加</span></a></li>
-                <li><a class="delete" href="<?php echo url('system/delete'); ?>?id={}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+                <li><a class="add" href="{:url('system/addUser')}" target="navTab"><span>添加</span></a></li>
+                <li><a class="delete" href="{:url('system/delete')}?id={}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
                 <li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab"><span>修改</span></a></li>
                 <li class="line">line</li>
                 <li><a class="icon" href="javascript:;" target="dwzExport" targetType="navTab" title=""><span>导出EXCEL</span></a></li>
@@ -60,28 +59,36 @@
             <thead>
             <tr>
                 <th width="30" align="center">选项</th>
-                <th width="80" align="center">序号</th>
-                <th width="80" align="center">权限ID</th>
-                <th width="120" align="center">权限名称</th>
-                <th width="150" align="center">描述</th>
-                <th width="150" align="center">所属菜单</th>
-                <th width="150" align="center">更新人</th>
-                <th width="80" align="center">更新时间</th>
+                <th width="30" align="center">序号</th>
+                <th width="80" align="center">用户名</th>
+                <th width="120" align="center">邮箱</th>
+                <th width="100" align="center">昵称</th>
+                <th width="60" align="center">状态</th>
+                <th width="150" align="center">最后登录信息</th>
+                <th width="80" align="center">主分组</th>
+                <th width="100" align="center">附加分组</th>
+                <th width="80" align="center">菜单列表</th>
+                <th width="80" align="center">权限列表</th>
+                <th width="80" align="center">注册时间</th>
             </tr>
             </thead>
             <tbody class="table_list">
-            <?php if(is_array($auth_list) || $auth_list instanceof \think\Collection || $auth_list instanceof \think\Paginator): if( count($auth_list)==0 ) : echo "" ;else: foreach($auth_list as $key=>$auth): ?>
+            {foreach name='user_list' item='user'}
             <tr height="30">
-                <td><input type="checkbox" name="checkid[]" id="checkid<?php echo $auth['id']; ?>" value="<?php echo $auth['id']; ?>"/></td>
-                <td><?php echo $auth['id']; ?></td>
-                <td><?php echo $auth['id']; ?></td>
-                <td><?php echo $auth['name']; ?></td>
-                <td><?php echo $auth['desc']; ?></td>
-                <td><?php echo $auth['menu_id']; ?></td>
-                <td><?php echo $auth['operate_id']; ?></td>
-                <td><?php echo $auth['operate_time']; ?></td>
+                <td><input type="checkbox" name="checkid[]" id="checkid{$user.id}" value="{$user.id}"/></td>
+                <td>{$user.id}</td>
+                <td>{$user.username}</td>
+                <td>{$user.email}</td>
+                <td>{$user.nickname}</td>
+                <td>{$user.status}</td>
+                <td>{$user.last_login_time}<br/>{$user.last_login_ip}</td>
+                <td>{$user.main_group_id}</td>
+                <td>{$user.sub_group_ids}</td>
+                <td>{$user.menu_ids}</td>
+                <td>{$user.auth_ids}</td>
+                <td>{$user.register_time}</td>
             </tr>
-            <?php endforeach; endif; else: echo "" ;endif; ?>
+            {/foreach}
             </tbody>
         </table>
         <div class="panelBar">
@@ -103,4 +110,4 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="/tenflyer/public/static/admin/js/form.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/table.js"></script>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\xampp\htdocs\tenflyer\public/../application/admin\view\login\login.html";i:1535938615;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\xampp\htdocs\tenflyer\public/../application/admin\view\login\login.html";i:1536999624;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,6 +8,15 @@
 <!--[if lt IE 9]><script src="/tenflyer/public/static/dwz/js/speedup.js" type="text/javascript"></script><script src="/tenflyer/public/static/dwz/js/jquery-1.11.3.min.js" type="text/javascript"></script><![endif]-->
 <!--[if gte IE 9]><!--><script src="/tenflyer/public/static/dwz/js/jquery-2.1.4.min.js" type="text/javascript"></script><!--<![endif]-->
 <script language="JavaScript">
+	$(function(){
+	    //Enter登录
+	    document.onkeypress = function(e){
+	        var e = e || window.event;
+	        if(e.keyCode == 13){
+	            checkSubmit();
+			}
+		}
+	});
 	//登录验证
 	function checkSubmit(){
 	    var username = $("input[name='username']").val();

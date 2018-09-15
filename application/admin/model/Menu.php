@@ -61,6 +61,18 @@ class Menu extends Model
     }
 
     /**
+     * 获取所有可用的菜单
+     */
+    public function getValidMenu()
+    {
+        $menu_list = self::all(function($query){
+            $query->where("status=1 and name<>'个人中心'")->order('sort','asc');
+        });
+
+        return $menu_list;
+    }
+
+    /**
      * 获取当前用户所有可用菜单
      */
     public function getUserValidMenu()
@@ -76,6 +88,7 @@ class Menu extends Model
         }
     }
 
+
     /**
      * 根据顶级菜单获取下级菜单
      * @param $id
@@ -90,28 +103,16 @@ class Menu extends Model
     }
 
     /**
-     * 获取所有可用的菜单
-     */
-    public function getValidMenu()
-    {
-        $menu_list = self::all(function($query){
-            $query->where("status=1 and name<>'个人中心'")->order('sort','asc');
-        });
-
-        return $menu_list;
-    }
-
-    /**
      * 菜单组织成树状结构数组
      */
-    public function getTreeData($allMenu,$parentId=0)
+    public function getTreeData($allMenu,$pid=0)
     {
         $treeData = array();
 
         static $number = 1;
 
         foreach ($allMenu as $v) {
-            if ($v['pid'] == $parentId) {
+            if ($v['pid'] == $pid) {
                 if ($v['pid'] == 0) {
                     $v['levels'] = 0;
                 } else {
@@ -131,7 +132,7 @@ class Menu extends Model
     /**
      * 根据菜单id获取上级菜单个数(包含上上级)
      */
-    protected function getParentMenuNums($menu_id)
+    public function getParentMenuNums($menu_id)
     {
         $nums = 0;
         $menu = $this->where('id',$menu_id)->find();
@@ -215,10 +216,10 @@ class Menu extends Model
             $par_nums = $this->getParentMenuNums($value['id']);
             $margin_left = ($par_nums-1) * 30;
             if(isset($value['children']) && !empty($value['children'])){
-                $tableTree .= $hr.'<ul><h5 style="margin-left:'.$margin_left.'px;"><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</h5>';
+                $tableTree .= $hr.'<ul><h5 style="margin-left:'.$margin_left.'px;"><label><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></h5>';
                 $tableTree .= $this->getMenuTableTree($value['children'],$value['id']);
             }else{
-                $tableTree .= '<li style="list-style:none;margin-left:'.$margin_left.'px;"><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</li>';
+                $tableTree .= '<li style="list-style:none;margin-left:'.$margin_left.'px;"><label><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></li>';
             }
         }
 
@@ -226,4 +227,5 @@ class Menu extends Model
 
         return $tableTree;
     }
+
 }
