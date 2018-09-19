@@ -206,7 +206,44 @@ class System extends Base
     //保存用户
     public function saveUser()
     {
-
+        $request = Request::instance();
+        $result = array(
+            'statusCode' => 300,
+            'message' => 'error',
+        );
+        if($request->post('action') == 'add'){
+            $input = $request->post();
+            $sub_group_ids = implode(',',$input['sub_group_ids']);
+            $menu_ids = implode(',',$input['menu_ids']);
+            $auth_ids = implode(',',$input['auth_ids']);
+            $data = array(
+                'username' => $input['username'],
+                'password' => md5('123456'),
+                'status' => $input['status'],
+                'remark' => $input['remark'],
+                'register_time' => date('Y-m-d H:i:s'),
+                'main_group_id' => $input['main_group_id'],
+                'sub_group_ids' => $sub_group_ids,
+                'menu_ids' => $menu_ids,
+                'auth_ids' => $auth_ids,
+                'operate_id' => Session::get('username'),
+                'operate_time' => date('Y-m-d H:i:s'),
+            );
+            //分组名不能重复
+            $exist = Db::name('user')->where('username',$data['username'])->find();
+            if(!empty($exist)){
+                $result['message'] = '用户名已存在';
+                return json($result);
+            }
+            $insertId = Db::name('user')->insertGetId($data);
+            if($insertId){
+                $result['statusCode'] = 200;
+                $result['message'] = '用户注册成功！初始密码：123456';
+            }else{
+                $result['message'] = '用户注册失败！';
+            }
+            return json($result);
+        }
     }
 
     //用户权限列表
