@@ -23,6 +23,7 @@ class Base extends Controller
 
 
         $this->PAGE_LIST = array(
+            '1' => '1/页',
             '20' => '20/页',
             '50' => '50/页',
             '100' => '100/页',

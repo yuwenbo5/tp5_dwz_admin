@@ -22,10 +22,23 @@ class System extends Base
     public function menu()
     {
         $menu = new Menu();
-        $menu_list = $menu->getValidMenu();
+        //搜索条件
+        $where = '1=1';
+        input('name') != '' && $where = $where.' and name like "'.input('name').'%"';
+        input('status') != '' && $where = $where.' and status='.input('status');
+        input('pid') != '' && $where = $where.' and pid='.input('pid');
+        input('create_time_start') != '' && $where = $where.' and create_time>="'.input('create_time_start').'"';
+        input('create_time_end') != '' && $where = $where.' and create_time<="'.input('create_time_end').'"';
+
+        $all_menu = $menu->getValidMenu($where);
+        $tree_data = $menu->getTreeData($all_menu);
+        $menu_list = $menu->getMenuListTree($tree_data);
         $data = array(
             'menu_list' => $menu_list,
-
+            'status' => $menu->STATUS_ARR,
+            'parent_menu' => $menu->getValidMenu(),
+            'total_menu' => count($menu_list),
+            'sql' => '',//Db::name('sup_menu')->getlastsql(),
         );
 
         return $this->fetch('menu_list',$data);
@@ -36,7 +49,9 @@ class System extends Base
     public function addmenu()
     {
         $menu = new Menu();
-        $menu_list = $menu->getValidMenu();
+        $all_menu = $menu->getValidMenu();
+        $tree_data = $menu->getTreeData($all_menu);
+        $menu_list = $menu->getMenuListTree($tree_data);
         $data = array(
             'status' => $menu->STATUS_ARR,
             'menu_list' => $menu_list,
@@ -86,20 +101,65 @@ class System extends Base
     //用户分组列表
     public function userGroup()
     {
-        $user_group_list = Db::name('user_group')->select();
+        $page = input('pageNum') ? input('pageNum') : 1;
+        $numPerPage = input('numPerPage') ? input('numPerPage') : 20;
+        $pageParam    = ['page'=>$page,'query' =>[]];
+
+        $where = '1=1';
+        input('name') != '' && $where = $where.' and name like "'.input('name').'%"';
+        input('status') != '' && $where = $where.' and status='.input('status');
+        input('create_time_start') != '' && $where = $where.' and create_time>="'.input('create_time_start').'"';
+        input('create_time_end') != '' && $where = $where.' and create_time<="'.input('create_time_end').'"';
+
+        $order = 'id';
+        $orderBy ='asc';
+        input('orderField') != '' && $order = input('orderField');
+        input('orderBy') != '' && $orderBy = input('orderBy');
+
+        $user_group_list = Db::name('user_group')->where($where)->order($order,$orderBy)->paginate($numPerPage,false,$pageParam);
         $user_group = new UserGroup();
         $data = array(
             'user_group_list' => $user_group_list,
             'status' => $user_group->STATUS_ARR,
+            'page_list' => $this->PAGE_LIST,
+            'orderField' => array('operate_time' => '更新时间'),
+            'orderBy' => $this->ORDER_LIST,
+            'page' => $page,
+            'numPerPage' => $numPerPage,
+            'sql' => Db::name('user_group')->getLastSql(),
         );
-
         return $this->fetch('user_group_list',$data);
+    }
+
+    //分组所拥有权限列表
+    public function groupMenu()
+    {
+        if(Request::instance()->isGet() && input('get.id')){
+            $id = input('get.id');
+            $groupInfo = Db::name('user_group')->where('id',$id)->find();
+
+            //菜单列表
+            $menu = new Menu();
+            $main_menu = $menu->getMainMenu();
+            $menu_list = $menu->getValidMenu();
+            $menu_table_tree = array();
+            foreach($main_menu as $main){
+                $son_menu_tree = $menu->getTreeData($menu_list,$main['id']);
+                $menu_table_tree[$main['id']] = $main;
+                $menu_table_tree[$main['id']]['son_menu'] = $menu->getMenuTableTree($son_menu_tree,$main['id'],explode(',',$groupInfo['menu_ids']));
+            }
+
+            $data = array(
+                'group_menu_list' => $menu_table_tree,
+            );
+
+            return $this->fetch('group_menu',$data);
+        }
     }
 
     //用户分组添加页面
     public function addUserGroup()
     {
-
         $user_group = new UserGroup();
         $menu = new Menu();
         $auth = new Auth();

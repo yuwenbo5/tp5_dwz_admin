@@ -36,7 +36,7 @@ class Menu extends Model
     public function getMainMenu()
     {
         $main_menu = self::all(function($query){
-            $query->where('status=1 and pid=0 and name<>"个人中心"')->order('sort','asc');
+            $query->where('pid=0 and name<>"个人中心"')->order('sort','asc');
         });
 
         return $main_menu;
@@ -52,7 +52,7 @@ class Menu extends Model
         }else{
             $user_menu_list = Session::get('menu_list');
             $main_menu = self::all(function($query)use($user_menu_list){
-                $query->where('status=1 and pid=0 and name<>"个人中心" and id in ('.simplode($user_menu_list).')')->order('sort','asc');
+                $query->where('pid=0 and name<>"个人中心" and id in ('.simplode($user_menu_list).')')->order('sort','asc');
             });
 
             return $main_menu;
@@ -63,10 +63,11 @@ class Menu extends Model
     /**
      * 获取所有可用的菜单
      */
-    public function getValidMenu()
+    public function getValidMenu($where='1=1')
     {
-        $menu_list = self::all(function($query){
-            $query->where("status=1 and name<>'个人中心'")->order('sort','asc');
+        $where .= ' and name<>"个人中心"';
+        $menu_list = self::all(function($query)use($where){
+            $query->where($where)->order('sort','asc');
         });
 
         return $menu_list;
@@ -82,7 +83,7 @@ class Menu extends Model
         }else{
             $user_menu_list = Session::get('menu_list');
             $menu_list = self::all(function($query)use($user_menu_list){
-                $query->where("status=1 and id in (".simplode($user_menu_list).")")->order('sort','asc');
+                $query->where("id in (".simplode($user_menu_list).")")->order('sort','asc');
             });
             return $menu_list;
         }
@@ -96,7 +97,7 @@ class Menu extends Model
     public function getSonMenu($id)
     {
         $son_menu = self::all(function($query)use($id){
-            $query->where('status=1 and pid="'.$id.'"')->order('sort','asc');
+            $query->where('pid="'.$id.'"')->order('sort','asc');
         });
 
         return $son_menu;
@@ -202,7 +203,7 @@ class Menu extends Model
     /**
      * 生成table_tree
      */
-    public function getMenuTableTree($treeData,$pid=0)
+    public function getMenuTableTree($treeData,$pid=0,$oldMenu=array())
     {
         $tableTree = '';
         foreach($treeData as $value){
@@ -213,19 +214,61 @@ class Menu extends Model
             if($value['pid'] == 0){
                 $hr = '<hr/>';
             }
+            $checked = '';
+            if(in_array($value['id'],$oldMenu)){
+                $checked = 'checked';
+            }
             $par_nums = $this->getParentMenuNums($value['id']);
             $margin_left = ($par_nums-1) * 30;
             if(isset($value['children']) && !empty($value['children'])){
-                $tableTree .= $hr.'<ul><h5 style="margin-left:'.$margin_left.'px;"><label><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></h5>';
+                $tableTree .= $hr.'<ul><h5 style="margin-left:'.$margin_left.'px;"><label><input type="checkbox" '.$checked.' name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></h5>';
                 $tableTree .= $this->getMenuTableTree($value['children'],$value['id']);
             }else{
-                $tableTree .= '<li style="list-style:none;margin-left:'.$margin_left.'px;"><label><input type="checkbox" name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></li>';
+                $tableTree .= '<li style="list-style:none;margin-left:'.$margin_left.'px;"><label><input type="checkbox" '.$checked.' name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></li>';
             }
         }
 
         $tableTree .= '</ul>';
 
         return $tableTree;
+    }
+
+    /**
+     * 生成列表tree
+     */
+    public function getMenuListTree($treeData,$pid=0)
+    {
+        $listTree = array();
+
+        foreach($treeData as $value){
+            if($value['pid'] != $pid){
+                continue;
+            }
+
+            if($value['pid'] == 0){
+                $listTree[] = $value;
+                if(isset($value['children']) && !empty($value['children'])){
+
+                    $listTree = array_merge($listTree,$this->getMenuListTree($value['children'],$value['id']));
+                }
+            }else{
+                $par_nums = $this->getParentMenuNums($value['id']);
+                $prix_str = '';
+                for($i=1; $i<$par_nums; $i++){
+                    $prix_str .= '│&nbsp;&nbsp;&nbsp;';
+                }
+
+                $value['name'] = $prix_str.'└─'.$value['name'];
+                $listTree[] = $value;
+                if(isset($value['children']) && !empty($value['children'])){
+
+                    $listTree = array_merge($listTree,$this->getMenuListTree($value['children'],$value['id']));
+                }
+            }
+
+        }
+
+        return $listTree;
     }
 
 }
