@@ -24662,3 +24662,651 @@
 [ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.035357s ]
 [ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.000661s ]
 [ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  desc LIMIT 0,20 [ RunTime:0.000557s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:15:45+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/system/usergroup.html?_=1537801087930
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html?_=1537801087930 [运行时间：2.158984s][吞吐率：0.46req/s] [内存消耗：3,150.38kb] [文件加载：62]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  '_' => '1537801087930',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.015371s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.026339s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.016825s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.002494s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.030589s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.000941s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  asc LIMIT 0,20 [ RunTime:0.000968s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:15:55+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/system/groupmenu.html?id=1&_=1537801087931
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/groupmenu.html?id=1&_=1537801087931 [运行时间：2.219983s][吞吐率：0.45req/s] [内存消耗：3,028.82kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'groupmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  '_' => '1537801087931',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->groupMenu[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\group_menu.html [ array (
+  0 => 'group_menu_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.005035s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.024122s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.016357s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@groupmenu' LIMIT 1 [ RunTime:0.002400s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.023658s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002301s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_menu` [ RunTime:0.013511s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  pid=0 and name<>"个人中心" ) ORDER BY `sort`  asc [ RunTime:0.001319s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  1=1 and name<>"个人中心" ) ORDER BY `sort`  asc [ RunTime:0.001523s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001216s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001148s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001163s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001176s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001277s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.001200s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.001275s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.001161s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001158s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.001173s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.001165s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001224s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 16 LIMIT 1 [ RunTime:0.001170s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 21 LIMIT 1 [ RunTime:0.001519s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 16 LIMIT 1 [ RunTime:0.001152s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001149s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 22 LIMIT 1 [ RunTime:0.001148s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 16 LIMIT 1 [ RunTime:0.001144s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001351s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 23 LIMIT 1 [ RunTime:0.001141s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001169s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 24 LIMIT 1 [ RunTime:0.001275s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 23 LIMIT 1 [ RunTime:0.001159s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001148s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 25 LIMIT 1 [ RunTime:0.001139s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 23 LIMIT 1 [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001187s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.001168s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.001158s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.001178s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.001225s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.001266s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000584s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:16:16+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/system/usergroup.html
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html [运行时间：2.147172s][吞吐率：0.47req/s] [内存消耗：2,995.27kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'content-length' => '93',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:88',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'pageNum' => '1',
+  'numPerPage' => '1',
+  'name' => '',
+  'status' => '',
+  'create_time_start' => '',
+  'create_time_end' => '',
+  'orderField' => '',
+  'orderBy' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.015890s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.024153s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.008479s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.002861s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.023582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.002033s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  asc LIMIT 0,1 [ RunTime:0.002300s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:16:20+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/system/usergroup.html
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html [运行时间：2.148957s][吞吐率：0.47req/s] [内存消耗：2,995.09kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'content-length' => '93',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:88',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'pageNum' => '2',
+  'numPerPage' => '1',
+  'name' => '',
+  'status' => '',
+  'create_time_start' => '',
+  'create_time_end' => '',
+  'orderField' => '',
+  'orderBy' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.014191s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.023919s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.018445s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.002382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.025280s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.002123s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  asc LIMIT 1,1 [ RunTime:0.001820s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:16:28+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/system/usergroup.html
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html [运行时间：2.163783s][吞吐率：0.46req/s] [内存消耗：2,995.05kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'content-length' => '86',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:88',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+  'status' => '',
+  'create_time_start' => '',
+  'create_time_end' => '',
+  'orderField' => '',
+  'orderBy' => 'asc',
+  'numPerPage' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.006350s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.020568s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.016447s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.001918s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.051379s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.001997s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  asc LIMIT 0,1 [ RunTime:0.002103s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:16:39+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/system/usergroup.html
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html [运行时间：2.138700s][吞吐率：0.47req/s] [内存消耗：2,995.06kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'content-length' => '87',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:88',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+  'status' => '',
+  'create_time_start' => '',
+  'create_time_end' => '',
+  'orderField' => '',
+  'orderBy' => 'desc',
+  'numPerPage' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.005123s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.024023s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.008177s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.002355s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.024858s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.002026s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  desc LIMIT 0,1 [ RunTime:0.002620s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:16:52+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/system/usergroup.html
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html [运行时间：2.124653s][吞吐率：0.47req/s] [内存消耗：2,995.11kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'content-length' => '97',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:88',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'pageNum' => '2',
+  'numPerPage' => '1',
+  'name' => '',
+  'status' => '',
+  'create_time_start' => '',
+  'create_time_end' => '',
+  'orderField' => '',
+  'orderBy' => 'desc',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.005424s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.021788s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.007936s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.001610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.025130s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.002008s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  desc LIMIT 1,1 [ RunTime:0.002003s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:17:21+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/system/usergroup.html
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html [运行时间：2.133397s][吞吐率：0.47req/s] [内存消耗：2,996.55kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'content-length' => '98',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:88',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'pageNum' => '1',
+  'numPerPage' => '20',
+  'name' => '',
+  'status' => '',
+  'create_time_start' => '',
+  'create_time_end' => '',
+  'orderField' => '',
+  'orderBy' => 'desc',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.014041s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.024045s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.007410s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.002381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.022798s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.001237s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  desc LIMIT 0,20 [ RunTime:0.001169s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:17:28+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/system/usergroup.html
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html [运行时间：2.209809s][吞吐率：0.45req/s] [内存消耗：2,996.47kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'content-length' => '87',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:88',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+  'status' => '',
+  'create_time_start' => '',
+  'create_time_end' => '',
+  'orderField' => '',
+  'orderBy' => 'asc',
+  'numPerPage' => '20',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.015338s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.059377s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.009137s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.002383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.054975s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.002054s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  asc LIMIT 0,20 [ RunTime:0.002413s ]
+---------------------------------------------------------------
+[ 2018-09-24T23:18:01+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/system/usergroup.html?_=1537801087932
+[ info ] 127.0.0.1:88/tenflyer/public/admin/system/usergroup.html?_=1537801087932 [运行时间：2.143966s][吞吐率：0.47req/s] [内存消耗：2,995.11kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'system',
+    2 => 'usergroup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:88',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36',
+  'referer' => 'http://127.0.0.1:88/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'bdshare_firstime=1533397452317; csrftoken=fUycVQl7nhwbyasbTm4zgoEUk7VUzD3d0xn2TRv3NrnTSxQlXM5O20Lpd7fNH3b5; PHPSESSID=9n4g74v7bo77ng7j7hptub3j02',
+)
+[ info ] [ PARAM ] array (
+  '_' => '1537801087932',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\System->userGroup[ E:\phpStudy\PHPTutorial\WWW\tenflyer\application\admin\controller\System.php ]
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\tenflyer\public/../application/admin\view\system\user_group_list.html [ array (
+  0 => 'user_group_list',
+  1 => 'status',
+  2 => 'page_list',
+  3 => 'orderField',
+  4 => 'orderBy',
+  5 => 'page',
+  6 => 'numPerPage',
+  7 => 'sql',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.014640s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.024407s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.007817s ] mysql:host=localhost;port=3308;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'System@usergroup' LIMIT 1 [ RunTime:0.002233s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user_group` [ RunTime:0.027368s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sup_user_group` WHERE  (  1=1 ) LIMIT 1 [ RunTime:0.002033s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_user_group` WHERE  (  1=1 ) ORDER BY `id`  desc LIMIT 0,20 [ RunTime:0.002189s ]

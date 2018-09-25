@@ -74,6 +74,22 @@ class Menu extends Model
     }
 
     /**
+     * 获取所有菜单键值对
+     * @return $menu_name
+     */
+    public function getAllMenu($where='1=1')
+    {
+        $menu_collections = $this->getValidMenu($where);
+
+        $menu_list = array();
+        foreach($menu_collections as $menu){
+            $menu_list[$menu['id']] = $menu['name'];
+        }
+
+        return $menu_list;
+    }
+
+    /**
      * 获取当前用户所有可用菜单
      */
     public function getUserValidMenu()

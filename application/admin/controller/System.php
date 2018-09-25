@@ -10,6 +10,7 @@ namespace app\admin\controller;
 use app\admin\model\Auth;
 use app\admin\model\Menu;
 use app\admin\model\UserGroup;
+use app\admin\model\User;
 use think\console\command\make\Model;
 use think\Db;
 use think\Request;
@@ -112,7 +113,7 @@ class System extends Base
         input('create_time_end') != '' && $where = $where.' and create_time<="'.input('create_time_end').'"';
 
         $order = 'id';
-        $orderBy ='asc';
+        $orderBy ='desc';
         input('orderField') != '' && $order = input('orderField');
         input('orderBy') != '' && $orderBy = input('orderBy');
 
@@ -309,9 +310,38 @@ class System extends Base
     //用户权限列表
     public function auth()
     {
-        $auth_list = Db::name('auth')->select();
+        $page = input('pageNum') ? input('pageNum') : 1;
+        $numPerPage = input('numPerPage') ? input('numPerPage') : 20;
+        $pageParam    = ['page'=>$page,'query' =>[]];
+
+        $where = '1=1';
+        input('name') != '' && $where = $where.' and name like "'.input('name').'%"';
+        input('menu_id') != '' && $where = $where.' and menu_id='.input('menu_id');
+        input('operate_time_start') != '' && $where = $where.' and operate_time>="'.input('operate_time_start').'"';
+        input('operate_time_end') != '' && $where = $where.' and operate_time<="'.input('operate_time_end').'"';
+
+        $order = 'id';
+        $orderBy ='desc';
+        input('orderField') != '' && $order = input('orderField');
+        input('orderBy') != '' && $orderBy = input('orderBy');
+
+        $user = new User();
+        $user_name = $user->getAllUser();
+        $menu = new Menu();
+        $menu_name = $menu->getAllMenu();
+        $menu_list = $menu->getMenuListTree( $menu->getTreeData( $menu->getValidMenu()));
+        $auth_list = Db::name('auth')->where($where)->order($order,$orderBy)->paginate($numPerPage,false,$pageParam);
         $data = array(
             'auth_list' => $auth_list,
+            'menu_list' => $menu_list,
+            'user_name' => $user_name,
+            'menu_name' => $menu_name,
+            'page_list' => $this->PAGE_LIST,
+            'orderField' => array('operate_time' => '更新时间'),
+            'orderBy' => $this->ORDER_LIST,
+            'page' => $page,
+            'numPerPage' => $numPerPage,
+            'sql' => Db::name('auth')->getLastSql(),
         );
 
         return $this->fetch('auth_list',$data);

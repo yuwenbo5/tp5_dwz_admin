@@ -1,6 +1,13 @@
-$(document).ready(function()
-{
-    //admin的js内容
+//table的js内容
+
+$("table[id=table_header]", $p).each(function() {
+
+    $(this).click(function (event) {
+
+        var $this = $(this);
+
+        alert(13435);
+    });
 });
 
 

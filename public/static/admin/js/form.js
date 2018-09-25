@@ -1,10 +1,7 @@
 /**
  * form表单的js内容
+ * 注意：只能使用函数式编程
  */
-$(document).ready(function()
-{
-
-});
 
 
 /**
