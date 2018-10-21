@@ -1,6 +1,5 @@
-
-<div class="pageHeader">
-    <form onsubmit="return navTabSearch(this);" action="" method="post" onreset="$(this).find('select.combox').comboxReset()">
+<form onsubmit="return navTabSearch(this);" action="" method="post" onreset="$(this).find('select.combox').comboxReset()">
+    <div class="pageHeader">
         <div class="searchBar">
             <table class="searchContent">
                 <tr>
@@ -46,51 +45,51 @@
                 </ul>
             </div>
         </div>
-    </form>
-</div>
-<div class="pageContent">
-    <div class="panelBar">
-        <ul class="toolBar">
-            <li><a class="add" href="{:url('addMenu')}" target="navTab"><span>添加菜单</span></a></li>
-        </ul>
     </div>
-    <table class="table" width="100%" layoutH="138">
-        <thead>
-        <tr>
-            <th width="80" align="center">序号</th>
-            <th width="200" align="center">菜单名称</th>
-            <th width="200" align="center">菜单规则</th>
-            <th width="150" align="center">菜单状态</th>
-            <th width="80" align="center">排序</th>
-            <th align="center">备注</th>
-            <th width="240" align="center">操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        {foreach name='menu_list' key='k' item='menu'}
-        <tr height="30">
-            <td>{++$k}</td>
-            <td align="left" style="text-align:left;">{$menu.name}</td>
-            <td>{$menu.rule}</td>
-            <td>{$status[$menu.status]}</td>
-            <td>{$menu.sort}</td>
-            <td>{$menu.remark}</td>
-            <td>
-                <div class="panelBar" style="text-align:center;background:none;border:none;">
-                    <ul class="toolBar" style="display:inline-block;">
-                        <li><a class="edit" href="{:url('updateMenu')}?id={$menu.id}" target="navTab"><span>修改</span></a></li>
-                        <li><a class="delete" href="{:url('deleteMenu')}?id={$menu.id}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        {/foreach}
-        </tbody>
-    </table>
-    <div class="panelBar">
-        <div class="pages">
-            <span>共{$total_menu}条</span>
+    <div class="pageContent">
+        <div class="panelBar">
+            <ul class="toolBar">
+                <li><a class="add" href="{:url('addMenu')}" target="navTab"><span>添加菜单</span></a></li>
+            </ul>
         </div>
-        <p>{$sql}</p>
+        <table class="table" width="100%" layoutH="138">
+            <thead>
+            <tr>
+                <th width="80" align="center">序号</th>
+                <th width="200" align="center">菜单名称</th>
+                <th width="200" align="center">菜单规则</th>
+                <th width="150" align="center">菜单状态</th>
+                <th width="80" align="center">排序</th>
+                <th align="center">备注</th>
+                <th width="240" align="center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach name='menu_list' key='k' item='menu'}
+            <tr height="30">
+                <td>{++$k}</td>
+                <td align="left" style="text-align:left;">&nbsp;&nbsp;{$menu.name}</td>
+                <td>{$menu.rule}</td>
+                <td>{$status[$menu.status]}</td>
+                <td>{$menu.sort}</td>
+                <td>{$menu.remark}</td>
+                <td>
+                    <div class="panelBar" style="text-align:center;background:none;border:none;">
+                        <ul class="toolBar" style="display:inline-block;">
+                            <li><a class="edit" href="{:url('updateMenu')}?id={$menu.id}" target="navTab"><span>修改</span></a></li>
+                            <li><a class="delete" href="{:url('deleteMenu')}?id={$menu.id}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        <div class="panelBar">
+            <div class="pages">
+                <span>共{$total_menu}条</span>
+            </div>
+            <p>{$sql}</p>
+        </div>
     </div>
-</div>
+</form>

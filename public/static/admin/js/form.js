@@ -11,6 +11,12 @@
 function selectAllMenu(obj){
     var is_checked = $(obj).prop('checked');
     $("#menu_list").find("input[type='checkbox']").prop('checked',is_checked);
+
+    if(is_checked){
+        $("#menu_list").find('.ckbox').removeClass('unchecked').addClass('checked');
+    }else{
+        $("#menu_list").find('.ckbox').removeClass('checked').addClass('unchecked');
+    }
 }
 
 /**

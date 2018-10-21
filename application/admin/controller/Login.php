@@ -54,7 +54,8 @@ class Login extends Controller
                 Session::set('menu_ids',$userInfo['menu_ids']);
                 Session::set('auth_ids',$userInfo['auth_ids']);
                 Session::set('nickname', trim(strip_tags($userInfo['nickname'])));
-                Session::set('expire_time', time() + 24 * 60 * 60);
+//                Session::set('expire_time', time() + 24 * 60 * 60);
+                Session::set('expire_time', time() + 10);
 
                 //菜单列表
                 $this->setMenuSession();

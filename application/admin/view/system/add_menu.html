@@ -3,12 +3,12 @@
 
     <form method="post" action="{:url('system/savemenu')}" class="pageForm required-validate" onsubmit="return validateCallback(this)">
         <input type="hidden" name="action" value="{$id ? 'update' : 'add'}" />
-        <div class="pageFormContent nowrap" layoutH="97">
+        <div class="pageFormContent nowrap" layoutH="97" style="padding-left:50px;">
 
             <dl>
                 <dt>菜单名称：</dt>
                 <dd>
-                    <input type="text" name="name" maxlength="30" class="required" />
+                    <input type="text" name="name" maxlength="30" class="required" size="30"/>
                     <span class="info"></span>
                 </dd>
             </dl>
@@ -34,7 +34,7 @@
             <dl>
                 <dt>菜单状态：</dt>
                 <dd>
-                    <select class="required" name="status">
+                    <select class="required" name="status" style="width:80px;">
                         <option value="all">请选择</option>
                         {foreach name='status' item='val'}
                             <option value="{$key}" {$key?="selected"}>{$val}</option>
@@ -46,13 +46,13 @@
             <dl>
                 <dt>菜单排序：</dt>
                 <dd>
-                    <input type="text" name="sort" maxlength="30" class="required" alt="排序号"/>
+                    <input type="text" name="sort" maxlength="30" class="required" alt="排序号" size="8"/>
                     <span class="info"></span>
                 </dd>
             </dl>
             <dl>
                 <dt>备注：</dt>
-                <dd><textarea name="remark" cols="80" rows="2" class="textInput"></textarea></dd>
+                <dd><textarea name="remark" cols="40" rows="4" class="textInput"></textarea></dd>
             </dl>
         </div>
         <div class="formBar">

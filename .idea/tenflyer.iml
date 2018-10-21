@@ -21,5 +21,6 @@
     <orderEntry type="module" module-name="thsp" />
     <orderEntry type="module" module-name="dwz_group" />
     <orderEntry type="module" module-name="tpshop" />
+    <orderEntry type="module" module-name="hy_obj" />
   </component>
 </module>

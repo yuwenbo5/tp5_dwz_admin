@@ -8,14 +8,14 @@
             <dl>
                 <dt>权限名称：</dt>
                 <dd>
-                    <input type="text" name="name" maxlength="30" class="required" />
+                    <input type="text" name="name" maxlength="30" size="30" class="required" />
                     <span class="info"></span>
                 </dd>
             </dl>
             <dl>
                 <dt>权限描述：</dt>
                 <dd>
-                    <textarea name="desc" rows="3" cols="50"></textarea>
+                    <textarea name="desc" rows="3" cols="32"></textarea>
                     <span class="info"></span>
                 </dd>
             </dl>
@@ -33,15 +33,16 @@
             <dl>
                 <dt>添加权限码：</dt>
                 <dd>
-                    <select onchange="getActList(this)" id="controller">
+                    <select onchange="getActList(this)" id="controller" style="width:150px;">
                         <option value="0">选择控制器</option>
                         {foreach name='controller_list' item='controller'}
                         <option value="{$controller}">{$controller}</option>
                         {/foreach}
                     </select>
                     <span class="info"></span>
-                    <ul id="act_list">
-                    </ul>
+                    <br/>
+                    <div id="act_list">
+                    </div>
                 </dd>
             </dl>
             <dl>
@@ -49,7 +50,7 @@
                 <dd>
                     <table>
                         <tbody>
-                        <tr><th style="width:80%">权限码</th><th style="width: 50px;text-align: center;">操作</th></tr>
+                        <tr height="35"><th style="width:80%;font-weight:bold;">权限码</th><th style="width: 50px;text-align: center;font-weight:bold;">操作</th></tr>
                         </tbody>
                         <tbody id="rightList">
                         </tbody>
@@ -87,13 +88,13 @@
                     layer.alert("请选择控制器" , {icon:2,time:1000});
                     return;
                 }
-                var strtr = "<tr id="+row_id+">";
+                var strtr = "<tr height='24' id="+row_id+">";
                 if(ncode!= ''){
                     strtr += '<td><input type="text" name="auth[]" value="'+ncode+'@'+ $(this).val()+'" class="form-control" style="width:300px;"></td>';
                 }else{
                     strtr += '<td><input type="text" name="auth[]" value="" class="form-control" style="width:300px;"></td>';
                 }
-                strtr += '<td style="text-align: center;"><a href="javascript:;" class="ncap-btn" onclick="$(this).parent().parent().remove();">删除</a></td>';
+                strtr += '<td style="text-align: center;color:#666;"><a href="javascript:;" class="ncap-btn" onclick="$(this).parent().parent().remove();">删除</a></td>';
                 $('#rightList').append(strtr);
             }else{
                 $("#"+row_id).remove();

@@ -168,6 +168,12 @@ body, #splitBar { background:#F9E8F9;}
 #taskbar li .taskbutton span { color:#FFF;}
 #taskbar .taskbarLeft, #taskbar .taskbarRight { background:url(../default/images/layout/taskbar_control.png) no-repeat;}
 
+/* Menu */
+#navMenu, #navMenu li, #navMenu li.selected a, #navMenu li.selected span { background:url(../purple/images/menu/menu.png) no-repeat;}
+#navMenu { background-color:#FD95C9; }
+#navMenu li a, #navMenu li span { color:#FFF; }
+#navMenu li.selected span { color:#000; }
+
 /* Homepage */
 .sidebarContent { display:block; overflow:auto; height:500px; border:solid 1px #86B4EC; background:#FFF;}
 .accountInfo { display:block; overflow:hidden; height:60px; padding:0 10px; background:url(../default/images/account_info_bg.png) repeat-x}

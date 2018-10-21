@@ -178,6 +178,8 @@ class System extends Base
         //权限列表
         $auth_menu_tree = $auth->getAuthTree($auth->getMenuTreeData());
 
+
+
         $data = array(
             'status' => $user_group->STATUS_ARR,
             'menu_table_tree' => $menu_table_tree,
@@ -227,9 +229,36 @@ class System extends Base
     //用户列表
     public function user()
     {
-        $user_list = Db::name('user')->select();
+        $page = input('pageNum') ? input('pageNum') : 1;
+        $numPerPage = input('numPerPage') ? input('numPerPage') : 20;
+        $pageParam    = ['page'=>$page,'query' =>[]];
+
+        $where = '1=1';
+        input('username') != '' && $where = $where.' and username like "'.input('username').'%"';
+        input('nickname') != '' && $where = $where.' and nickname like "'.input('nickname').'%"';
+        input('email') != '' && $where = $where.' and email like "'.input('email').'%"';
+        input('status') != '' && $where = $where.' and status='.input('status');
+        input('main_group_id') != '' && $where = $where.' and main_group_id='.input('main_group_id');
+        input('register_time_start') != '' && $where = $where.' and register_time>="'.input('register_time_start').'"';
+        input('register_time_end') != '' && $where = $where.' and register_time<="'.input('register_time_end').'"';
+
+        $order = 'id';
+        $orderBy ='desc';
+        input('orderField') != '' && $order = input('orderField');
+        input('orderBy') != '' && $orderBy = input('orderBy');
+
+        $user_list = Db::name('user')->where($where)->order($order,$orderBy)->paginate($numPerPage,false,$pageParam);
+        $user_group = new UserGroup();
         $data = array(
             'user_list' => $user_list,
+            'status' => (new User())->STATUS_ARR,
+            'group_list' => $user_group->getAllUserGroup(),
+            'page_list' => $this->PAGE_LIST,
+            'orderField' => array('register_time' => '注册时间'),
+            'orderBy' => $this->ORDER_LIST,
+            'page' => $page,
+            'numPerPage' => $numPerPage,
+            'sql' => Db::name('user')->getLastSql(),
         );
 
         return $this->fetch('user_list',$data);
@@ -279,6 +308,8 @@ class System extends Base
             $auth_ids = implode(',',$input['auth_ids']);
             $data = array(
                 'username' => $input['username'],
+                'nickname' => $input['nickname'],
+                'email' => $input['email'],
                 'password' => md5('123456'),
                 'status' => $input['status'],
                 'remark' => $input['remark'],
@@ -436,13 +467,14 @@ class System extends Base
             }
         }
 
-        $html = '';
+        $html = '<ul style="border:1px dashed #ccc;padding:10px 0 10px 0;">';
         foreach ($selectControl as $val){
             $html .= "<li><label><input class='checkbox' name='act_list' value=".$val." type='checkbox'>".$val."</label></li>";
-            if($val && strlen($val)> 18){
-                $html .= "<li></li>";
-            }
+//            if($val && strlen($val)> 18){
+//                $html .= "<li></li>";
+//            }
         }
+        $html .= '<li style="clear:both;"></li></ul>';
         exit($html);
     }
 

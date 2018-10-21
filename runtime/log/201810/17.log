@@ -1,0 +1,817 @@
+---------------------------------------------------------------
+[ 2018-10-17T16:19:40+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/login.html
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/login.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：1,374.91kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\xampp\htdocs\tenflyer\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:19:40+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html [运行时间：0.108006s][吞吐率：9.26req/s] [内存消耗：1,366.23kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:19:43+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html?0.986391258083223
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html?0.986391258083223 [运行时间：0.038002s][吞吐率：26.31req/s] [内存消耗：1,367.13kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  '0_986391258083223' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:19:46+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/login/login
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/login [运行时间：0.036002s][吞吐率：27.78req/s] [内存消耗：1,371.47kb] [文件加载：46]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '61',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'loginVerify',
+  'username' => 'admin',
+  'password' => '123456',
+  'verify' => '8937',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:19:46+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html?0.4066931032288139
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html?0.4066931032288139 [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,367.13kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  '0_4066931032288139' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:19:50+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/login/login
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/login [运行时间：0.032002s][吞吐率：31.25req/s] [内存消耗：1,371.47kb] [文件加载：46]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '61',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'loginVerify',
+  'username' => 'admin',
+  'password' => '123456',
+  'verify' => '2889',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:19:50+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html?0.6258890580673546
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html?0.6258890580673546 [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,367.13kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  '0_6258890580673546' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:19:55+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/login/login
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/login [运行时间：2.106120s][吞吐率：0.47req/s] [内存消耗：1,967.77kb] [文件加载：53]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '61',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'loginVerify',
+  'username' => 'admin',
+  'password' => '123456',
+  'verify' => '2877',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+
+[ error ] [2002]SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+[E:\xampp\htdocs\tenflyer\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2018-10-17T16:20:20+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/login/login
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/login [运行时间：0.018002s][吞吐率：55.55req/s] [内存消耗：1,370.66kb] [文件加载：46]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '61',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'loginVerify',
+  'username' => 'admin',
+  'password' => '123456',
+  'verify' => '2877',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:20:20+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html?0.7396724468776104
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html?0.7396724468776104 [运行时间：0.022001s][吞吐率：45.45req/s] [内存消耗：1,366.97kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  '0_7396724468776104' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:20:21+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html?0.6027398684960388
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html?0.6027398684960388 [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：1,367.13kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  '0_6027398684960388' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:20:23+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html?0.6799192028667977
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html?0.6799192028667977 [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：1,367.13kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  '0_6799192028667977' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:20:26+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/login/login
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/login [运行时间：0.077005s][吞吐率：12.99req/s] [内存消耗：2,046.90kb] [文件加载：53]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '61',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'loginVerify',
+  'username' => 'admin',
+  'password' => '123456',
+  'verify' => '6275',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_user` [ RunTime:0.012001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_user` WHERE  `username` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_menu` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  name="个人中心" and pid=0 ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-17T16:20:26+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html?0.32391157485223987
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html?0.32391157485223987 [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,368.47kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  '0_32391157485223987' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:20:26+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/index/index.html
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/index/index.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,412.13kb] [文件加载：57]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\xampp\htdocs\tenflyer\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\xampp\htdocs\tenflyer\public/../application/admin\view\index\index.html [ array (
+  0 => 'main_menu',
+  1 => 'current_main_menu',
+  2 => 'current_menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.006000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'Index@index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_menu` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  pid=0 and name<>"个人中心" ) ORDER BY `sort`  asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  name="个人中心" and pid=0 ) ORDER BY `sort`  asc LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  1=1 and name<>"个人中心" ) ORDER BY `sort`  asc [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-17T16:20:35+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/index/sonmenu.html?id=1
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/index/sonmenu.html?id=1 [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,360.28kb] [文件加载：56]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'sonmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->sonMenu[ E:\xampp\htdocs\tenflyer\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.004001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'Index@sonmenu' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_menu` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  1=1 and name<>"个人中心" ) ORDER BY `sort`  asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-17T16:20:36+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/index/sonmenu.html?id=7
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/index/sonmenu.html?id=7 [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：2,360.28kb] [文件加载：56]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'sonmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'id' => '7',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->sonMenu[ E:\xampp\htdocs\tenflyer\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.003001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'Index@sonmenu' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_menu` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  1=1 and name<>"个人中心" ) ORDER BY `sort`  asc [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-17T16:20:37+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/index/sonmenu.html?id=1
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/index/sonmenu.html?id=1 [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,359.70kb] [文件加载：56]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'sonmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->sonMenu[ E:\xampp\htdocs\tenflyer\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_auth` [ RunTime:0.004001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=tenflyer_sup;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `sup_auth` WHERE  `auth_code` = 'Index@sonmenu' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sup_menu` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `sup_menu` WHERE  (  1=1 and name<>"个人中心" ) ORDER BY `sort`  asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-17T16:20:38+08:00 ] 127.0.0.1 POST /tenflyer/public/admin/index/sonmenu.html?id=7
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/index/sonmenu.html?id=7 [运行时间：0.028002s][吞吐率：35.71req/s] [内存消耗：1,438.52kb] [文件加载：48]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'sonmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://127.0.0.1:8888',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+  'id' => '7',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:20:38+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/login.html
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/login.html [运行时间：0.017001s][吞吐率：58.82req/s] [内存消耗：1,374.29kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\xampp\htdocs\tenflyer\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-17T16:20:38+08:00 ] 127.0.0.1 GET /tenflyer/public/admin/login/verify.html
+[ info ] 127.0.0.1:8888/tenflyer/public/admin/login/verify.html [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,366.23kb] [文件加载：45]
+[ info ] [ LANG ] E:\xampp\htdocs\tenflyer\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1:8888/tenflyer/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'USER_NAME_COOKIE=yuwb; PHPSESSID=7jj932u3ell68nculk7jdhluc7; OA_USER_ID=yuwb; LOGIN_USER_ID=yuwb; BJYADMIN=0f3r5ct47umiqho36rt2ur3qse; LAST_OPERATION_TIME=1539763851',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\xampp\htdocs\tenflyer\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File

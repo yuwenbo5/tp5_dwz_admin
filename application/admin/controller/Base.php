@@ -3,6 +3,7 @@ namespace app\admin\controller;
 use think\Controller;
 use think\Db;
 use think\Session;
+use think\Request;
 
 class Base extends Controller
 {
@@ -16,10 +17,10 @@ class Base extends Controller
         parent::_initialize();
 
         //检测登录
-        $this->is_login();
+        $this->isLogin();
 
         //检查操作权限
-        $this->check_priv();
+        $this->checkPriv();
 
 
         $this->PAGE_LIST = array(
@@ -59,7 +60,7 @@ class Base extends Controller
     }
 
     //验证是否登录
-    protected function is_login(){
+    protected function isLogin(){
         if(Session::get('expire_time') && Session::get('expire_time') < time()){
             session_destroy();
         }
@@ -72,14 +73,14 @@ class Base extends Controller
      * 检验用户权限
      * @return array
      */
-    private function check_priv()
+    private function checkPriv()
     {
         //获取操作的控制器和方法
         $ctl = CONTROLLER_NAME;
         $act = ACTION_NAME;
 
         //不需要检查的不检查
-        $is_auth = $this->is_check_auth();
+        $is_auth = $this->isCheckAuth();
         if(!$is_auth){
             return true;
         }
@@ -102,7 +103,7 @@ class Base extends Controller
      * 是否需要检查权限
      * @return bool
      */
-    protected function is_check_auth()
+    protected function isCheckAuth()
     {
         $flag = true;
         if(session('auth_list') == 'all'){

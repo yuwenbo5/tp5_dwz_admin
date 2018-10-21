@@ -26,6 +26,9 @@ function json_encode_array($array){
 function simplode($array)
 {
     $return_str = '';
+    if(!$array){
+        return $return_str;
+    }
     foreach($array as $val){
         $return_str .= '"'.$val.'",';
     }

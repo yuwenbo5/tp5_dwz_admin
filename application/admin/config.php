@@ -53,4 +53,10 @@ return [
         'reset' => true,
     ],
 
+    //网站名配置
+    'sitename' => '腾辉电子商务',
+
+    //底部公司署名
+    'COMPANY' => 'Tenflyer',
+
 ];

@@ -33,19 +33,19 @@
             <dl>
                 <dt>分配菜单：</dt>
                 <dd>
-                    <input type="checkbox" onclick="selectAllMenu(this);" class="select_all" value="all"/>全部
+                    <!--<input type="checkbox" onclick="selectAllMenu(this);" class="select_all" value="all"/>全部-->
                     <hr/>
-                    <div id="menu_list" style="list-style:none;">
+                    <ul class="tree treeFolder treeCheck expand" oncheck="test_check_tree" id="menu_list">
                         {foreach name='menu_table_tree' item='menu_table'}
-                            <li class="menu_item" style="float:left;list-style:none;padding:8px;">
-                                <input type="checkbox" onclick="selectItemMenu(this);" value="li_all"/>全选
-                                <h3 style="color:#333;font-size:14px;"><input type="checkbox" name="menu_ids[]" value="{$menu_table.id}"/>{$menu_table.name}</h3>
-                                {$menu_table.son_menu}
+                            <li>
+                                <a tname="menu_ids[]" tvalue="{$menu_table.id}"><b>{$menu_table.name}</b></a>
+                                <ul>
+                                    {$menu_table.son_menu}
+                                </ul>
                             </li>
                         {/foreach}
-                        <li style="clear:both;list-style:none;"></li>
                         <span class="info"></span>
-                    </div>
+                    </ul>
                 </dd>
             </dl>
 

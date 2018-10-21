@@ -52,7 +52,9 @@ class Menu extends Model
         }else{
             $user_menu_list = Session::get('menu_list');
             $main_menu = self::all(function($query)use($user_menu_list){
-                $query->where('pid=0 and name<>"个人中心" and id in ('.simplode($user_menu_list).')')->order('sort','asc');
+                $where = 'pid=0 and name<>"个人中心"';
+                $where .= !empty($user_menu_list) ? ' and id in ('.simplode($user_menu_list).')' : '';
+                $query->where($where)->order('sort','asc');
             });
 
             return $main_menu;
@@ -99,7 +101,9 @@ class Menu extends Model
         }else{
             $user_menu_list = Session::get('menu_list');
             $menu_list = self::all(function($query)use($user_menu_list){
-                $query->where("id in (".simplode($user_menu_list).")")->order('sort','asc');
+                $where = '1=1';
+                $where .= !empty($user_menu_list) ? ' and id in ('.simplode($user_menu_list).')' : '';
+                $query->where($where)->order('sort','asc');
             });
             return $menu_list;
         }
@@ -180,13 +184,13 @@ class Menu extends Model
             $color = 'rgb('.$rgb.','.$rgb.','.$rgb.','.')';
             $prix_str = '';
             for($i=0; $i<$par_nums; $i++){
-                $prix_str .= '+';
+                $prix_str .= '-└';
             }
             if(isset($value['children']) && !empty($value['children'])){
-                $optTree .= '<option style="font-weight:'.$weight.';font-size:12px;background:'.$background.';color:'.$color.';" value="'.$value['id'].'">|'.$prix_str.$value['name'].'</option>';
+                $optTree .= '<option style="font-weight:'.$weight.';font-size:12px;background:'.$background.';color:'.$color.';" value="'.$value['id'].'">│'.$prix_str.$value['name'].'</option>';
                 $optTree .= $this->getMenuTreeOpt($value['children'],$value['id']);
             }else{
-                $optTree .= '<option style="font-weight:'.$weight.';font-size:12px;background:'.$background.';color:'.$color.';" value="'.$value['id'].'">|'.$prix_str.$value['name'].'</option>';
+                $optTree .= '<option style="font-weight:'.$weight.';font-size:12px;background:'.$background.';color:'.$color.';" value="'.$value['id'].'">│'.$prix_str.$value['name'].'</option>';
             }
         }
 
@@ -204,14 +208,14 @@ class Menu extends Model
                 continue;
             }
             if(isset($value['children']) && !empty($value['children'])){
-                $menuTree .= '<div class="accordionHeader"><h2><span>Folder</span>'.$value['name'].'</h2></div><div class="accordionContent">';
+                $menuTree .= '<div class="accordionHeader"><h2><span>Folder</span>'.$value['name'].'</h2></div><div class="accordionContent"><ul class="tree treeFolder">';
                 $menuTree .= $this->getMenuFormat($value['children'],$value['id']);
             }else{
                 $menuTree .= '<ul class="tree treeFolder"><li><a href="'.url($value['rule']).'" target="navTab" rel="'.$value['rel'].'">'.$value['name'].'</a></li></ul>';
             }
         }
 
-        $menuTree .= '</div>';
+        $menuTree .= '</ul></div>';
 
         return $menuTree;
     }
@@ -222,29 +226,28 @@ class Menu extends Model
     public function getMenuTableTree($treeData,$pid=0,$oldMenu=array())
     {
         $tableTree = '';
-        foreach($treeData as $value){
+        foreach($treeData as $key => $value){
             if($value['pid'] != $pid){
                 continue;
             }
-            $hr = '';
-            if($value['pid'] == 0){
-                $hr = '<hr/>';
-            }
+
             $checked = '';
             if(in_array($value['id'],$oldMenu)){
                 $checked = 'checked';
             }
-            $par_nums = $this->getParentMenuNums($value['id']);
-            $margin_left = ($par_nums-1) * 30;
+
             if(isset($value['children']) && !empty($value['children'])){
-                $tableTree .= $hr.'<ul><h5 style="margin-left:'.$margin_left.'px;"><label><input type="checkbox" '.$checked.' name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></h5>';
+                $tableTree .= '<li><a tname="menu_ids[]" tvalue="'.$value['id'].'" '.$checked.'>'.$value['name'].'</a><ul>';
                 $tableTree .= $this->getMenuTableTree($value['children'],$value['id']);
             }else{
-                $tableTree .= '<li style="list-style:none;margin-left:'.$margin_left.'px;"><label><input type="checkbox" '.$checked.' name="menu_ids[]" value="'.$value['id'].'"/>'.$value['name'].'</label></li>';
+                $tableTree .= '<li><a tname="menu_ids[]" tvalue="'.$value['id'].'" '.$checked.'>'.$value['name'].'</a></li>';
+
+                if($key +1 == count($treeData)){
+                    $tableTree .= '</ul></li>';
+                }
+
             }
         }
-
-        $tableTree .= '</ul>';
 
         return $tableTree;
     }

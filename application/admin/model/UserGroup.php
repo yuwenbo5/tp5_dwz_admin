@@ -29,6 +29,23 @@ class UserGroup extends Model
     }
 
     /**
+     * 获取所有分组
+     */
+    public function getAllUserGroup()
+    {
+        $group_list = self::all(function($query){
+            $query->where('1=1')->order('id','asc');
+        });
+
+        $return_list = array();
+        foreach($group_list as $val){
+            $return_list[$val['id']] = $val;
+        }
+
+        return $return_list;
+    }
+
+    /**
      * 获取所有可用分组
      */
     public function getAllValidGroup()

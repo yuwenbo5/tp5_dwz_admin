@@ -3,11 +3,24 @@
     <form method="post" action="{:url('system/saveUser')}" class="pageForm required-validate" onsubmit="return validateCallback(this)">
         <input type="hidden" name="action" value="{$id ? 'update' : 'add'}" />
         <div class="pageFormContent nowrap" layoutH="97">
-
             <dl>
                 <dt>用户(登录)名：</dt>
                 <dd>
-                    <input type="text" name="username" maxlength="30" class="required" />
+                    <input type="text" name="username" maxlength="30" class="required" size="30"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>昵称：</dt>
+                <dd>
+                    <input type="text" name="nickname" maxlength="30" class="required" size="30"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>email：</dt>
+                <dd>
+                    <input type="text" name="email" maxlength="32" size="30"/>
                     <span class="info"></span>
                 </dd>
             </dl>
@@ -26,7 +39,7 @@
             <dl>
                 <dt>主分组：</dt>
                 <dd>
-                    <select class="required" name="main_group_id">
+                    <select class="required" name="main_group_id" style="width:100px;">
                         <option value="all">请选择</option>
                         {foreach name='group_list' item='group'}
                         <option value="{$group.name}">{$group.name}</option>
@@ -38,7 +51,14 @@
             <dl>
                 <dt>附加分组：</dt>
                 <dd>
-
+                    <ul style="border:1px dashed #ccc;padding:10px 0 10px 0;width:550px;">
+                        {foreach name='group_list' item='group'}
+                        <li>
+                            <label><input class='checkbox' name='sub_group_ids' value='{$group.id}' type='checkbox'>{$group.name}</label>
+                        </li>
+                        {/foreach}
+                        <li style="clear:both;"></li>
+                    </ul>
                     <span class="info"></span>
                 </dd>
             </dl>
@@ -51,26 +71,25 @@
             </dl>
             <dl>
                 <dt>分配菜单：</dt>
-                <dd>
-                    <input type="checkbox" onclick="selectAllMenu(this);" class="select_all" value="all"/>全部
-                    <hr/>
-                    <div id="menu_list" style="list-style:none;">
+                <dd style="border:1px solid #ccc;">
+                    <!--<input type="checkbox" onclick="selectAllMenu(this);" class="select_all" value="all"/>全部-->
+                    <ul class="tree treeFolder treeCheck expand" oncheck="test_check_tree" id="menu_list">
                         {foreach name='menu_table_tree' item='menu_table'}
-                        <li class="menu_item" style="float:left;list-style:none;padding:8px;">
-                            <input type="checkbox" onclick="selectItemMenu(this);" value="li_all"/>全选
-                            <h3 style="color:#333;font-size:14px;"><input type="checkbox" name="menu_ids[]" value="{$menu_table.id}"/>{$menu_table.name}</h3>
-                            {$menu_table.son_menu}
+                        <li>
+                            <a tname="menu_ids[]" tvalue="{$menu_table.id}"><b>{$menu_table.name}</b></a>
+                            <ul>
+                                {$menu_table.son_menu}
+                            </ul>
                         </li>
                         {/foreach}
-                        <li style="clear:both;list-style:none;"></li>
                         <span class="info"></span>
-                    </div>
+                    </ul>
                 </dd>
             </dl>
 
             <dl>
                 <dt>分配权限：</dt>
-                <dd>
+                <dd style="border:1px solid #ccc;">
                     <input type="checkbox" onclick="selectAllAuth(this);" class="select_all" value="all"/>全部
                     <div id="auth_list" style="list-style:none;color:#888;">
                         {$auth_menu_tree}

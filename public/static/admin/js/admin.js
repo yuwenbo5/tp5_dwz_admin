@@ -1,15 +1,3 @@
-//table的js内容
-
-$("table[id=table_header]", $p).each(function() {
-
-    $(this).click(function (event) {
-
-        var $this = $(this);
-
-        alert(13435);
-    });
-});
-
 
 //主菜单点击事件
 function selectMenu(obj)
