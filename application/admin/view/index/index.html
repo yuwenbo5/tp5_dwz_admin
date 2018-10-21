@@ -58,6 +58,7 @@
         }
         $(function(){
             DWZ.init("__STATIC__/dwz.frag.xml", {
+                loginUrl:"{:url('login/login')}",
                 statusCode:{ok:200, error:300, timeout:301}, //【可选】
                 pageInfo:{pageNum:"pageNum", numPerPage:"numPerPage", orderField:"orderField", orderDirection:"orderDirection"}, //【可选】
                 keys: {statusCode:"statusCode", message:"message"}, //【可选】
@@ -96,7 +97,7 @@
         <!-- navMenu -->
         <div id="navMenu">
             <ul>
-                <li class="selected"><a href="{:url('index/sonMenu')}?id={$current_main_menu.id}"><span>{$current_main_menu.name}</span></a></li>
+                <li class="selected"><a href="{:url('index/sonMenu')}?id={$current_main_menu.id}" onclick="selectMenu(this);"><span>{$current_main_menu.name}</span></a></li>
                 {foreach name='main_menu' item='value'}
                     <li><a href="{:url('index/sonMenu')}?id={$value.id}" onclick="selectMenu(this);"><span>{$value.name}</span></a></li>
                 {/foreach}

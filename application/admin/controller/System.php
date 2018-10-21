@@ -18,7 +18,6 @@ use think\Session;
 
 class System extends Base
 {
-
     //菜单列表
     public function menu()
     {

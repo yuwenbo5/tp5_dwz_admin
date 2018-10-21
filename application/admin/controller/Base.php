@@ -7,6 +7,12 @@ use think\Request;
 
 class Base extends Controller
 {
+    //不判断登录的白名单
+    public $CHECK_LOGIN_WHITE = array();
+
+    //不检测权限的白名单
+    protected $CHECK_PRIV_WHITE = array();
+
     //每页记录数查询
     public $PAGE_LIST = array();
 
@@ -16,8 +22,13 @@ class Base extends Controller
     public function _initialize(){
         parent::_initialize();
 
+        //不需要检测的登录的白名单
+        $this->CHECK_LOGIN_WHITE = array(
+            MODULE_NAME.'/'.CONTROLLER_NAME.'/sonmenu',
+        );
+
         //检测登录
-        $this->isLogin();
+        $this->checkLogin();
 
         //检查操作权限
         $this->checkPriv();
@@ -60,13 +71,37 @@ class Base extends Controller
     }
 
     //验证是否登录
-    protected function isLogin(){
-        if(Session::get('expire_time') && Session::get('expire_time') < time()){
-            session_destroy();
+    protected function checkLogin()
+    {
+        //是否需要检测登录
+        if($this->isCheckLogin()){
+            if(Session::get('expire_time') && Session::get('expire_time') < time()){
+//                session_destroy();
+                //登录超时
+                $this->redirect('login/ajaxTimeout');
+            }
+            if(!Session::get('username') || Session::get('username') == ''){
+                $this->redirect('login/login');
+            }
         }
-        if(!Session::get('username') || Session::get('username') == ''){
-            $this->redirect('login/login');
+    }
+
+    /**
+     * 是否需要检测登录
+     * $return bool
+     */
+    private function isCheckLogin()
+    {
+        //白名单不检测
+        $model = MODULE_NAME;
+        $ctl = CONTROLLER_NAME;
+        $act = ACTION_NAME;
+        $path = $model.'/'.$ctl.'/'.$act;
+        if(in_array($path,$this->CHECK_LOGIN_WHITE)){
+            return false;
         }
+
+        return true;
     }
 
     /**
@@ -75,7 +110,8 @@ class Base extends Controller
      */
     private function checkPriv()
     {
-        //获取操作的控制器和方法
+        //获取操作的模块、控制器和方法
+        $model = MODULE_NAME;
         $ctl = CONTROLLER_NAME;
         $act = ACTION_NAME;
 
@@ -94,8 +130,8 @@ class Base extends Controller
         }
         $role_auth = explode(',', $role_auth);
         //检查是否拥有此操作权限
-        if(!in_array($ctl.'@'.$act, $role_auth)){
-            return ['status'=>-1,'msg'=>'您没有操作权限['.($ctl.'@'.$act).'],请联系超级管理员分配权限','url'=>url('Admin/Index/welcome')];
+        if(!in_array($model.'@'.$ctl.'@'.$act, $role_auth)){
+            return ['status'=>-1,'msg'=>'您没有操作权限['.($model.'@'.$ctl.'@'.$act).'],请联系超级管理员分配权限','url'=>url('Admin/Index/index')];
         }
     }
 
@@ -106,15 +142,23 @@ class Base extends Controller
     protected function isCheckAuth()
     {
         $flag = true;
-        if(session('auth_list') == 'all'){
+        if(session('username') == 'admin'){
             //超级管理员不检测
             $flag = false;
         }
 
-        //获取操作的控制器和方法
+        //获取操作的模块、控制器和方法
+        $model = MODULE_NAME;
         $ctl = CONTROLLER_NAME;
         $act = ACTION_NAME;
-        $is_has = Db::name('auth')->where('auth_code',$ctl.'@'.$act)->find();
+
+        //白名单不检测
+        if(in_array($model.'@'.$ctl.'@'.$act,$this->CHECK_PRIV_WHITE)){
+            return false;
+        }
+
+
+        $is_has = Db::name('auth')->where('auth_code',$model.'@'.$ctl.'@'.$act)->find();
         if(!$is_has){
             //没有设置权限不检测
             $flag = false;

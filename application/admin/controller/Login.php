@@ -76,6 +76,13 @@ class Login extends Controller
     }
 
     /**
+     * 登录超时
+     */
+    public function ajaxTimeout(){
+        return view();
+    }
+
+    /**
      * 登录成功后菜单保存session
      */
     protected function setMenuSession()
